@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.view.impl.PreBattleViewImpl">
+   <children>
+      <Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0">
+         <panes>
+            <TitledPane animated="false" text="Fight Setup">
+               <content>
+                  <VBox accessibleRole="SPINNER">
+                     <children>
+                        <HBox>
+                           <children>
+                              <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Number of Fights: " />
+                              <Spinner fx:id="numFightsFld" />
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Random Number Generator Seed: " />
+                              <Spinner fx:id="randNumFld">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin></Spinner>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Player Setup">
+               <content>
+                  <VBox>
+                     <children>
+                        <HBox>
+                           <children>
+                              <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Name of Player: " />
+                              <TextField fx:id="namePlayerFld" />
+                              <Label text="Choose the pet type: ">
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </Label>
+                              <ComboBox fx:id="petTypeCBox" prefWidth="150.0" promptText="Choose the pet type" visibleRowCount="3" />
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Name of Pet: " />
+                              <TextField fx:id="namePetFld">
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="5.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Player Type: ">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </Label>
+                              <ComboBox fx:id="playerTypeCBox" prefWidth="150.0" promptText="Player Type">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </ComboBox>
+                              <Button fx:id="createPlayerBtn" mnemonicParsing="false" text="Create Player">
+                                 <HBox.margin>
+                                    <Insets left="650.0" top="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Starting Pet HP: " />
+                              <Spinner fx:id="startHPFld" editable="true">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin></Spinner>
+                              <Label fx:id="preBattleErrorLbl" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" textFill="RED">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="50.0" top="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Separator>
+                        <ListView fx:id="playerListBox" />
+                     </children>
+                  </VBox>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Advance to Fight">
+               <content>
+                  <Button fx:id="advanceToFightBtn" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Advance to Fight">
+                     <font>
+                        <Font size="96.0" />
+                     </font>
+                  </Button>
+               </content>
+            </TitledPane>
+         </panes>
+      </Accordion>
+      <ProgressBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="300.0" prefWidth="300.0" progress="0.0" />
+   </children>
+</VBox>
